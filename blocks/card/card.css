@@ -1,0 +1,50 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+.card__item {
+  border: 2px solid #e0e0e0;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px #e0e0e0;
+}
+.card__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 3px;
+  background: red;
+  transition: 0.3s ease;
+}
+.card__item:hover .card__number {
+  color: red;
+}
+.card__item:hover::after {
+  width: 100%;
+}
+.card__item:active {
+  transform: translateY(7px);
+}
+.card__item:active .card__number {
+  color: red;
+}
+.card__item:active::after {
+  width: 100%;
+}
+.card__title {
+  font-size: 24px;
+}
+.card__text {
+  font-size: 17px;
+}
+.card__number {
+  font-size: 40px;
+  text-align: right;
+  color: #888;
+  transition: 0.3s ease;
+}/*# sourceMappingURL=card.css.map */
