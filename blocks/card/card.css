@@ -1,0 +1,62 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.card-item {
+  border: 2px solid #e0e0e0;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px #e0e0e0;
+}
+
+.card-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 3px;
+  background: red;
+  transition: 0.3s ease;
+}
+
+.card-number {
+  font-size: 40px;
+  text-align: right;
+  color: #888;
+  transition: 0.3s ease;
+}
+
+.card-item:hover .card-number {
+  color: red;
+}
+
+.card-item:hover::after {
+  width: 100%;
+}
+
+.card-item:active {
+  transform: translateY(7px);
+}
+
+.card-item:active .card-number {
+  color: red;
+}
+
+.card-item:active::after {
+  width: 100%;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.card-text {
+  font-size: 17px;
+}
+
+/*# sourceMappingURL=card.css.map */
