@@ -8,16 +8,16 @@ export default function decorate(block) {
     firstImage.remove();
   }
   slides.forEach((slide, index) => {
-    slide.classList.add('carousel__slide');
+    slide.classList.add('carousel-slide');
     const title = slide.querySelector('h1, h2, h3, h4, h5, h6');
     const description = [...slide.querySelectorAll('p')].find(
       (paragraph) => !paragraph.querySelector('a'),
     );
     const links = slide.querySelectorAll('a');
-    title?.classList.add('carousel__title');
-    description?.classList.add('carousel__description');
+    title?.classList.add('carousel-title');
+    description?.classList.add('carousel-description');
     const content = document.createElement('div');
-    content.classList.add('carousel__content');
+    content.classList.add('carousel-content');
     if (title) {
       content.appendChild(title);
     }
@@ -26,9 +26,9 @@ export default function decorate(block) {
     }
     if (links.length) {
       const linkWrapper = document.createElement('div');
-      linkWrapper.classList.add('carousel__links');
+      linkWrapper.classList.add('carousel-links');
       links.forEach((link) => {
-        link.classList.add('carousel__link');
+        link.classList.add('carousel-link');
         linkWrapper.appendChild(link);
       });
       content.appendChild(linkWrapper);
@@ -39,11 +39,11 @@ export default function decorate(block) {
     }
   });
   const previousButton = document.createElement('button');
-  previousButton.className = 'carousel__button carousel__button--prev';
+  previousButton.className = 'carousel-button carousel-button-prev';
   previousButton.setAttribute('aria-label', 'Previous slide');
   previousButton.innerHTML = '&#10094;';
   const nextButton = document.createElement('button');
-  nextButton.className = 'carousel__button carousel__button--next';
+  nextButton.className = 'carousel-button carousel-button-next';
   nextButton.setAttribute('aria-label', 'Next slide');
   nextButton.innerHTML = '&#10095;';
   block.append(previousButton, nextButton);
@@ -54,8 +54,8 @@ export default function decorate(block) {
     const nextIndex = (newIndex + slides.length) % slides.length;
     const next = slides[nextIndex];
     if (current === next) return;
-    const currentContent = current.querySelector('.carousel__content');
-    const nextContent = next.querySelector('.carousel__content');
+    const currentContent = current.querySelector('.carousel-content');
+    const nextContent = next.querySelector('.carousel-content');
     nextContent.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
     next.classList.add('is-active');
     const forceRepaint = () => next.offsetWidth;

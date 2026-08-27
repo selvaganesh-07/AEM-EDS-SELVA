@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 a:hover {
   text-decoration: none;
 }
@@ -8,15 +9,18 @@ a:hover {
   margin: 0 auto;
   padding: 50px 40px;
 }
+
 .teaser > div {
   display: flex;
   align-items: center;
   gap: 70px;
 }
+
 .teaser img {
   display: block;
   width: 100%;
 }
+
 .teaser h2 {
   margin: 0 0 32px;
   color: #202124;
@@ -24,11 +28,13 @@ a:hover {
   font-weight: 700;
   line-height: 55px;
 }
+
 .teaser ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .teaser li {
   position: relative;
   margin-bottom: 18px;
@@ -37,6 +43,7 @@ a:hover {
   font-size: 20px;
   line-height: 28px;
 }
+
 .teaser li::before {
   content: "✓";
   position: absolute;
@@ -53,6 +60,7 @@ a:hover {
   font-size: 13px;
   font-weight: 700;
 }
+
 .teaser a:first-child {
   color: #fff;
   background: linear-gradient(109deg, #0b7def 39.94%, #701cca);
@@ -61,6 +69,7 @@ a:hover {
   font-size: 18px;
   font-weight: bold;
 }
+
 .teaser a:last-child {
   color: #005dba;
   background: #fff;
@@ -69,6 +78,7 @@ a:hover {
   font-weight: bold;
   margin-left: 5%;
 }
+
 .teaser a:last-child::after {
   content: "→";
   margin-left: 12px;
@@ -85,4 +95,6 @@ a:hover {
 
 .teaser.bottom > div {
   flex-direction: column-reverse;
-}/*# sourceMappingURL=teaser.css.map */
+}
+
+/*# sourceMappingURL=teaser.css.map */
