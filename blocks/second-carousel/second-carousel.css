@@ -1,0 +1,420 @@
+.second-carousel {
+  /*
+   * ==================================================
+   * FULL WIDTH
+   * ==================================================
+   */
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  /*
+   * Escape AEM content container
+   */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  /*
+   * ==================================================
+   * HEIGHT
+   * ==================================================
+   */
+  height: 650px;
+  overflow: hidden;
+  /*
+   * ==================================================
+   * BACKGROUND IMAGE
+   * ==================================================
+   */
+  background-image: linear-gradient(rgba(25, 55, 80, 0.65), rgba(25, 55, 80, 0.65)), var(--carousel-background);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*
+   * ==================================================
+   * SLIDES WRAPPER
+   * ==================================================
+   */
+}
+.second-carousel__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * SLIDE
+   * ==================================================
+   */
+}
+.second-carousel__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /*
+   * Slide itself only fades.
+   * Background does NOT move.
+   */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.second-carousel__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * TEXT
+   * ==================================================
+   */
+}
+.second-carousel__text {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  max-width: 1150px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  transform: translateX(120px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+.second-carousel__slide.is-active .second-carousel__text {
+  transform: translateX(0);
+  opacity: 1;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * TITLE
+   * ==================================================
+   */
+}
+.second-carousel__title {
+  margin: 0 0 55px;
+  color: #fff;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * DESCRIPTION
+   * ==================================================
+   */
+}
+.second-carousel__description {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 50px;
+  color: #fff;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * NAME
+   * ==================================================
+   */
+}
+.second-carousel__name {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * ROLE
+   * ==================================================
+   */
+}
+.second-carousel__role {
+  margin: 0;
+  color: #fff;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * PREVIOUS / NEXT BUTTON
+   * ==================================================
+   */
+}
+.second-carousel__button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 55px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.second-carousel__button:hover {
+  opacity: 0.7;
+  transform: translateY(-50%) scale(1.1);
+}
+.second-carousel__button:focus {
+  outline: none;
+}
+.second-carousel__button {
+  /*
+   * Previous
+   */
+}
+.second-carousel__button--prev {
+  left: 45px;
+}
+.second-carousel__button {
+  /*
+   * Next
+   */
+}
+.second-carousel__button--next {
+  right: 45px;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * DOTS
+   * ==================================================
+   */
+}
+.second-carousel__dots {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * DOT
+   * ==================================================
+   */
+}
+.second-carousel__dot {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.second-carousel__dot.is-active {
+  background: #fff;
+  transform: scale(1.1);
+}
+.second-carousel__dot:hover {
+  background: #fff;
+}
+.second-carousel__dot:focus {
+  outline: none;
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * TABLET
+   * ==================================================
+   */
+}
+@media (max-width: 768px) {
+  .second-carousel {
+    width: 100vw;
+    height: 550px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    /*
+     * Text
+     */
+  }
+  .second-carousel__text {
+    width: 75%;
+    transform: translateX(80px);
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease;
+  }
+  .second-carousel {
+    /*
+     * Title
+     */
+  }
+  .second-carousel__title {
+    margin-bottom: 35px;
+    font-size: 40px;
+  }
+  .second-carousel {
+    /*
+     * Description
+     */
+  }
+  .second-carousel__description {
+    margin-bottom: 35px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .second-carousel {
+    /*
+     * Name
+     */
+  }
+  .second-carousel__name {
+    font-size: 21px;
+  }
+  .second-carousel {
+    /*
+     * Role
+     */
+  }
+  .second-carousel__role {
+    font-size: 19px;
+  }
+  .second-carousel {
+    /*
+     * Buttons
+     */
+  }
+  .second-carousel__button {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+  }
+  .second-carousel__button--prev {
+    left: 15px;
+  }
+  .second-carousel__button--next {
+    right: 15px;
+  }
+  .second-carousel {
+    /*
+     * Dots
+     */
+  }
+  .second-carousel__dots {
+    bottom: 25px;
+  }
+}
+.second-carousel {
+  /*
+   * ==================================================
+   * MOBILE
+   * ==================================================
+   */
+}
+@media (max-width: 480px) {
+  .second-carousel {
+    width: 100vw;
+    height: 500px;
+    /*
+     * Text
+     */
+  }
+  .second-carousel__text {
+    width: 70%;
+    transform: translateX(50px);
+    transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.9s ease;
+  }
+  .second-carousel {
+    /*
+     * Title
+     */
+  }
+  .second-carousel__title {
+    margin-bottom: 25px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  .second-carousel {
+    /*
+     * Description
+     */
+  }
+  .second-carousel__description {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .second-carousel {
+    /*
+     * Name
+     */
+  }
+  .second-carousel__name {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  .second-carousel {
+    /*
+     * Role
+     */
+  }
+  .second-carousel__role {
+    font-size: 16px;
+  }
+  .second-carousel {
+    /*
+     * Buttons
+     */
+  }
+  .second-carousel__button {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
+  .second-carousel__button--prev {
+    left: 5px;
+  }
+  .second-carousel__button--next {
+    right: 5px;
+  }
+  .second-carousel {
+    /*
+     * Dots
+     */
+  }
+  .second-carousel__dots {
+    bottom: 20px;
+  }
+  .second-carousel__dot {
+    width: 12px;
+    height: 12px;
+  }
+}/*# sourceMappingURL=second-carousel.css.map */
